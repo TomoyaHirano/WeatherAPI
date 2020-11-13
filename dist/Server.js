@@ -30,14 +30,11 @@ if (process.env.NODE_ENV === 'production') {
 }
 // Add APIs
 app.use('/api', routes_1.default);
+app.get("/weather/api", (req, res) => {
+    res.send({111:222});
+  });
 // Print API errors
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.use((err, req, res, next) => {
-    Logger_1.default.err(err, true);
-    return res.status(BAD_REQUEST).json({
-        error: err.message,
-    });
-});
 /************************************************************************************
  *                              Serve front-end content
  ***********************************************************************************/
@@ -45,8 +42,8 @@ const viewsDir = path_1.default.join(__dirname, 'views');
 app.set('views', viewsDir);
 const staticDir = path_1.default.join(__dirname, 'public');
 app.use(express_1.default.static(staticDir));
-app.get('*', (req, res) => {
-    res.sendFile('index.html', { root: viewsDir });
-});
+// app.get('*', (req, res) => {
+//     res.sendFile('index.html', { root: viewsDir });
+// });
 // Export express instance
 exports.default = app;
