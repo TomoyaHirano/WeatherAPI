@@ -14,6 +14,7 @@ import BaseRouter from './routes';
 import logger from '@shared/Logger';
 import { ForecastWeather } from "@entities/ForecastWeather";
 import { Place } from "@entities/Place";
+import ForecastWeatherManager from './manager/ForecastWeatherManager';
 
 const app = express();
 const { BAD_REQUEST } = StatusCodes;
@@ -62,31 +63,41 @@ app.use(express.static(staticDir));
 //     res.sendFile('index.html', {root: viewsDir});
 // });
 
-app.get("/weather/api", async (req, res) => {
-    // createConnection(""+count).then(async connection => {
-    //     count++
-    //     console.log("Inserting a new user into the database...");
-    //     const user = new Users();
-    //     user.firstName = "Timber";
-    //     user.lastName = "Saw";
-    //     user.age = 25;
-    //     await connection.manager.save(user);
-    //     console.log("Saved a new user with id: " + user.id);
-    
-    //     console.log("Loading users from the database...");
-    //     const users = await connection.manager.find(Users);
-    //     console.log("Loaded users: ", users);
-    
-    //     console.log("Here you can setup and run express/koa/any other framework.");
-    //     const places = await connection.manager.find(Place);
-    //     const forecastWeathers = await connection.manager.find(ForecastWeather);
-    //     res.send({places:places, forecastWeathers:forecastWeathers});
-    // }).catch(error => console.log(error));
-        const places = await getConnection().manager.find(Place);
-        const forecastWeathers = await getConnection().manager.find(ForecastWeather);
-        // res.status(200).end();
-        res.json({places:places, forecastWeathers:forecastWeathers});
-    });
+app.get("/api/weather/forecast/", async (req, res) => {
+    let manager = new ForecastWeatherManager();
+    const id = undefined;
+    const forecast = await manager.getForecastWeatherAll();
+    res.json({forecastWeathers:forecast});
+});
+
+app.get("/api/weather/forecast/:weatherId", async (req, res) => {
+    let weatherId = parseInt(req.params.weatherId)
+    let manager = new ForecastWeatherManager();
+    const forecast = await manager.getForecastWeather(weatherId);
+    res.json({forecastWeathers:forecast});
+});
+
+app.post("/api/weather/forecast/", async (req, res) => {
+    let manager = new ForecastWeatherManager();
+    const newForecastDetails = req.body;
+    const newForecast = await manager.createForecastWeather(newForecastDetails);
+    res.status(201).json(newForecast);
+});
+
+app.patch("/api/weather/forecast/:weatherId", async (req, res) => {
+    let manager = new ForecastWeatherManager();
+    const weatherId  = parseInt(req.params.weatherId);
+    const newForecastDetails = req.body;
+    const newForecast = await manager.updateForecastWeather(weatherId, newForecastDetails);
+    res.json(newForecast);
+});
+
+app.delete("/api/weather/forecast/:weatherId", async (req, res) => {
+    let manager = new ForecastWeatherManager();
+    const weatherId  = parseInt(req.params.weatherId);
+    await manager.deleteForecastWeather(weatherId);
+    res.status(200).end();
+});
 
 // Export express instance
 export default app;

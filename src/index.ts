@@ -1,11 +1,10 @@
+import './preStart'; // Must be the first import
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import {Users} from "./entities/Users";
-
-import './preStart'; // Must be the first import
-import app from '@server';
+// import app from '@server';
+import app from './Server';
 import logger from '@shared/Logger';
-
 
 // Start the server
 const port = Number(process.env.PORT || 3000);

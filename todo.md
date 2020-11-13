@@ -7,31 +7,31 @@
   - [x] テーブル作成
   - [x] データ投入
 - [ ] APサーバ整備
-  - [ ] API
-    - [ ] GET
-      - [ ] TEST
-      - [ ] CODE
-    - [ ] POST
-      - [ ] TEST
-      - [ ] CODE
-    - [ ] PUT
-      - [ ] TEST
-      - [ ] CODE
-    - [ ] PATCH
-      - [ ] TEST
-      - [ ] CODE
-    - [ ] DELETE
-      - [ ] TEST
-      - [ ] CODE
+  - [ ] GET
+    - [ ] TEST
+    - [x] CODE
+    - [x] 動作確認
+  - [ ] POST
+    - [ ] TEST
+    - [x] CODE
+    - [x] 動作確認
+  - [ ] PATCH
+    - [ ] TEST
+    - [x] CODE
+    - [x] 動作確認
+  - [ ] DELETE
+    - [ ] TEST
+    - [x] CODE
+    - [x] 動作確認
+- [ ] クライアントサイド整備
+  - [ ] Node上に静的ファイルを配置して返却する方法を調べる
+  - [ ] HTMLを作る
 - [ ] デモ準備
   - [ ] デモ内容考える
   - [ ] HTMLファイルを作成する（APIサービスを説明する）
 - [ ] その他
-  - [ ] マイグレーションファイル
+  - [x] マイグレーションファイル
   - [ ] Setup, Seed用スクリプト
   - [ ] README.md整備
   - [ ] データ投入
-
-
-
 
