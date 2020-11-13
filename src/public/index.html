@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Chrysalis Bacefook Newsfeed</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+<body>
+  <script src="./scripts/index.js"></script>
+  <div id="input">
+    <p>
+      <h3>Request Data</h3>
+    </p>
+    <p>
+      <h5>id</h5>
+      <input type="text" id="id"  placeholder="id">
+    </p>
+    <p>
+      <h5>year</h5>
+      <input type="text" id="year"  placeholder="year">
+    </p>
+    <p>
+      <h5>month</h5>
+      <input type="text" id="month"  placeholder="month">
+    </p>
+    <p>
+      <h5>day</h5>
+      <input type="text" id="day"  placeholder="day">
+    </p>
+    <p>
+      <h5>hour</h5>
+      <input type="text" id="hour"  placeholder="hour">
+    </p>
+    <p>
+      <h5>minute</h5>
+      <input type="text" id="minute"  placeholder="minute">
+    </p>
+    <p>
+      <h5>place_id</h5>
+      <input type="text" id="place_id"  placeholder="place_id">
+    </p>
+    <p>
+      <h5>railfall</h5>
+      <input type="text" id="railfall"  placeholder="railfall">
+    </p>
+      <input type="button" value="get" onclick="httpGet('/api/weather/forecast/1');">
+      <input type="button" value="post" onclick="createUserPost()">
+      <input type="button" value="patch" onclick="createUserPost()">
+      <input type="button" value="delete" onclick="createUserPost()">
+    <div>
+      <p>
+        <h3>Response Data</h3>
+      </p>
+      <p>
+        <div id="apioutput">
+        </div>
+      </p>
+  </div>
+</body>
+</html>

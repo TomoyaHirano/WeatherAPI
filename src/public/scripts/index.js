@@ -135,9 +135,11 @@ function deleteUser(ele) {
 }
 
 
-function httpGet(path) {
+async function httpGet(path) {
     console.log("httpGet")
-    return fetch(path, getOptions('GET'))
+    res = await fetch(path, getOptions('GET'))
+    json = await res.json()
+    document.getElementById("apioutput").innerHTML = JSON.stringify(json.forecastWeathers[0])
 }
 
 
