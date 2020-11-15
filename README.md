@@ -3,7 +3,7 @@
 ## 注釈
 このリポジトリは Code Chrysalis の生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
 
-### Table of Contents
+## Table of Contents
 **[What is Weather API](#what-is-weather-api)**<br>
 **[HOW TO Install](#how-to-install)**<br>
 **[HOW TO　RUN](#how-to-run)**<br>
