@@ -1,7 +1,7 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
-export class ForecastWeather {
+export class ActualWeather {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -27,3 +27,5 @@ export class ForecastWeather {
     @Column()
     rainfall: number;
 }
+
+export default ActualWeather;

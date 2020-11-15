@@ -13,3 +13,5 @@ export class Place {
     placeName: string;
 
 }
+
+export default Place;

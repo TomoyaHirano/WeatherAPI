@@ -9,7 +9,9 @@
       "test": "mocha --inspect -r ts-node/register -r dotenv/config src/tests/index.ts",
       "orm": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js --config src/ormconfig.ts",
       "makeMigrations": "yarn orm migration:generate",
-      "migrate": "yarn orm migration:run"
+      "migrate": "yarn orm migration:run",
+      "seeder": "ts-node -r dotenv/config ./node_modules/typeorm-seeding/dist/cli.js",
+      "seed": "yarn seeder --configName src/ormconfig.ts seed"
    },
    "nodemonConfig": {
       "watch": [
@@ -62,6 +64,7 @@
       "build.ts"
    ],
    "dependencies": {
+      "@types/faker": "^5.1.4",
       "command-line-args": "^5.1.1",
       "cookie-parser": "^1.4.5",
       "dotenv": "^8.2.0",

@@ -27,3 +27,5 @@ export class ForecastWeather {
     @Column()
     rainfall: number;
 }
+
+export default ForecastWeather;
