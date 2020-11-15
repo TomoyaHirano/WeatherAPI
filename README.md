@@ -36,5 +36,5 @@ https://tomoyahirano.github.io/WeatherAPI/dist/index.html#/
 * ブラウザを開き「http://localhost:3000/index.html」へアクセス。<br/>※ホスト名はご自身の環境に合わせて修正してください。
 
 ## Links
-- サンプルデータセットとして、気象庁ののオープンデータを利用しています。https://www.data.go.jp/data/dataset/mlit_20140919_0726
+- サンプルデータセットとして、気象庁のオープンデータを利用しています。<br/>https://www.data.go.jp/data/dataset/mlit_20140919_0726
 
