@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Weather API Specification
-  description: https://github.com/TomoyaHirano/WeatherAPI
+  description: This is the specification of WeatherAPI. See https://github.com/TomoyaHirano/WeatherAPI
 paths:
   /api/weather/forecast:
     get:
