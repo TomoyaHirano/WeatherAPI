@@ -6,47 +6,64 @@
 </head>
 <body>
   <script src="./scripts/index.js"></script>
-  <div id="input">
-    <p>
-      <h3>Request Data</h3>
-    </p>
-    <p>
-      <h5>id</h5>
-      <input type="text" id="id"  placeholder="id">
-    </p>
-    <p>
-      <h5>year</h5>
-      <input type="text" id="year"  placeholder="year">
-    </p>
-    <p>
-      <h5>month</h5>
-      <input type="text" id="month"  placeholder="month">
-    </p>
-    <p>
-      <h5>day</h5>
-      <input type="text" id="day"  placeholder="day">
-    </p>
-    <p>
-      <h5>hour</h5>
-      <input type="text" id="hour"  placeholder="hour">
-    </p>
-    <p>
-      <h5>minute</h5>
-      <input type="text" id="minute"  placeholder="minute">
-    </p>
-    <p>
-      <h5>place_id</h5>
-      <input type="text" id="place_id"  placeholder="place_id">
-    </p>
-    <p>
-      <h5>railfall</h5>
-      <input type="text" id="railfall"  placeholder="railfall">
-    </p>
-      <input type="button" value="get" onclick="httpGet('/api/weather/forecast/1');">
-      <input type="button" value="post" onclick="createUserPost()">
-      <input type="button" value="patch" onclick="createUserPost()">
-      <input type="button" value="delete" onclick="createUserPost()">
-    <div>
+  <div id="parent">
+    <div id="input">
+      <p>
+        <h3>Request Data</h3>
+      </p>
+        <table border="0">
+          <thead>
+              <tr>
+                  <th>要素</th>
+                  <th>値</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>id</td>
+                  <td><input type="text" id="id"  placeholder="id"></td>
+              </tr>
+              <tr>
+                  <td>year</td>
+                  <td><input type="text" id="year"  placeholder="year"></td>
+              </tr>
+              <tr>
+                  <td>month</td>
+                  <td><input type="text" id="month"  placeholder="month"></td>
+              </tr>
+              <tr>
+                  <td>day</td>
+                  <td><input type="text" id="day"  placeholder="day"></td>
+              </tr>
+              <tr>
+                  <td>hour</td>
+                  <td><input type="text" id="hour"  placeholder="hour"></td>
+              </tr>
+              <tr>
+                  <td>minute</td>
+                  <td><input type="text" id="minute"  placeholder="minute"></td>
+              </tr>
+              <tr>
+                  <td>place_id</td>
+                  <td><input type="text" id="place_id"  placeholder="place_id"></td>
+              </tr>
+              <tr>
+                  <td>rainfall</td>
+                  <td><input type="text" id="rainfall"  placeholder="rainfall"></td>
+              </tr>
+              <tr>
+                  <td>HTTPメソッド</td>
+                  <td>
+                        <input type="button" value="get" onclick="getForecastWeather();">
+                        <input type="button" value="post" onclick="postForecastWeather()">
+                        <input type="button" value="patch" onclick="patchForecastWeather()">
+                        <input type="button" value="delete" onclick="deleteForecastWeather()">
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+    <div id = "output">
       <p>
         <h3>Response Data</h3>
       </p>
@@ -54,6 +71,7 @@
         <div id="apioutput">
         </div>
       </p>
+    </div>
   </div>
 </body>
 </html>
