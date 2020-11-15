@@ -13,6 +13,7 @@
 天気予報情報が取得できるAPI　と　天気の実測値をユーザが登録するためのAPIです。<br/>
 詳細なAPI仕様は以下を参照してください。<br/>
 https://tomoyahirano.github.io/WeatherAPI/dist/index.html#/
+<br/>
 サンプルデータセットとして、気象庁の以下のオープンデータを利用しています。<br/>
 https://www.data.go.jp/data/dataset/mlit_20140919_0726<br/>
 
