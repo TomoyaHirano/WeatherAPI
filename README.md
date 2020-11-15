@@ -4,17 +4,18 @@
 このリポジトリは Code Chrysalis の生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
 
 ## Table of Contents
-**[What is Weather API](#what-is-weather-api)**<br>
+**[What is WeatherAPI](#what-is-weatherapi)**<br>
 **[HOW TO Install](#how-to-install)**<br>
-**[HOW TO　RUN](#how-to-run)**<br>
+**[HOW TO RUN](#how-to-run)**<br>
 **[Links](#links)**<br>
 
-## What is Weather API
+## What is WeatherAPI
 天気予報情報が取得できるAPI　と　天気の実測値をユーザが登録するためのAPIです。<br/>
 DBのセットアップ用のデータとして、気象庁の以下のオープンデータを利用しています。<br/>
-https://www.data.go.jp/data/dataset/mlit_20140919_0726
+https://www.data.go.jp/data/dataset/mlit_20140919_0726<br/>
+詳細なAPI仕様は以下を参照してください。
 
-## HOW TO Install
+## HOW TO INSTALL
 * 利用するデータベースをセットアップする
   - Postgresqlをインストールし、利用するdatabaseオブジェクトを作成してください。
   - 「src/ormconfig.ts」を編集し次の５つの項目を編集してください。

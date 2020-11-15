@@ -1,0 +1,241 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Weather API Specification
+  description: https://github.com/TomoyaHirano/WeatherAPI
+paths:
+  /api/weather/forecast:
+    get:
+      summary: Get all forecast weather records.
+      description: 全forecast weatherレコードを返却します.
+      responses:
+        '200':
+          description: HTTPステータスコード200と以下の情報を含むJSONオブジェクトを返します。
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                   forecastWeathers:
+                      type: array
+                      items: 
+                        type: "object"
+                        properties:
+                          id:
+                            type: integer
+                            example: 1234567
+                          year:
+                            type: integer
+                            example: 2020
+                          month:
+                            type: integer
+                            example: 11
+                          day:
+                            type: integer
+                            example: 15
+                          hour:
+                            type: integer
+                            example: 10
+                          minute:
+                            type: integer
+                            example: 10
+                          place_id:
+                            type: integer
+                            example: 1
+                          rainfall:
+                           type: integer
+                           example: 100
+    post:
+      summary: Post a forecast weather record which you send in request body.
+      description: ボディで指定された列を持つレコードを新規追加します.
+      # リクエストのbodyについて記述する
+      parameters:
+      # パラメータの名前
+      - name: "body"
+        # パラメータの場所
+        in: "body"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            id:
+              type: integer
+              example: 9999
+            year:
+              type: integer
+              example: 2020
+            month:
+              type: integer
+              example: 11
+            day:
+              type: integer
+              example: 15
+            hour:
+              type: integer
+              example: 10
+            minute:
+              type: integer
+              example: 10
+            place_id:
+              type: integer
+              example: 1
+            rainfall:
+             type: integer
+             example: 100
+      responses:
+        '201':
+          description: HTTPステータスコード201と作成されたオブジェクトが返却されます。
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  id:
+                    type: integer
+                    example: 9999
+                  year:
+                    type: integer
+                    example: 2020
+                  month:
+                    type: integer
+                    example: 11
+                  day:
+                    type: integer
+                    example: 15
+                  hour:
+                    type: integer
+                    example: 10
+                  minute:
+                    type: integer
+                    example: 10
+                  place_id:
+                    type: integer
+                    example: 1
+                  rainfall:
+                   type: integer
+                   example: 100
+  /api/weather/forecast/{id}:
+    get:
+      summary: Get a forecast weather record which has the specified id.
+      description: パスパラメータで指定されたIDを持つレコードを返却します.
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "取得対象レコードのID"
+        required: true
+      responses:
+        '200':
+          description: HTTPステータスコード200と以下の情報を含むJSONオブジェクトを返します。
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                   forecastWeathers:
+                      type: array
+                      items: 
+                        type: "object"
+                        properties:
+                          id:
+                            type: integer
+                            example: 1234567
+                          year:
+                            type: integer
+                            example: 2020
+                          month:
+                            type: integer
+                            example: 11
+                          day:
+                            type: integer
+                            example: 15
+                          hour:
+                            type: integer
+                            example: 10
+                          minute:
+                            type: integer
+                            example: 10
+                          place_id:
+                            type: integer
+                            example: 1
+                          rainfall:
+                           type: integer
+                           example: 100
+    patch:
+      summary: Patch a forecast weather record which has the specified id.
+      description: パスパラメータで指定されたIDを持つレコードを更新します.
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "更新対象レコードのID"
+        required: true
+      - name: "body"
+        # パラメータの場所
+        in: "body"
+        schema:
+          type: "object"
+          properties:
+            year:
+              type: integer
+              example: 2020
+            month:
+              type: integer
+              example: 11
+            day:
+              type: integer
+              example: 15
+            hour:
+              type: integer
+              example: 10
+            minute:
+              type: integer
+              example: 10
+            place_id:
+              type: integer
+              example: 1
+            rainfall:
+             type: integer
+             example: 100
+      responses:
+        '200':    # status code
+          description: return the patched record
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  id:
+                    type: integer
+                    example: 9999
+                  year:
+                    type: integer
+                    example: 2020
+                  month:
+                    type: integer
+                    example: 11
+                  day:
+                    type: integer
+                    example: 15
+                  hour:
+                    type: integer
+                    example: 10
+                  minute:
+                    type: integer
+                    example: 10
+                  place_id:
+                    type: integer
+                    example: 1
+                  rainfall:
+                   type: integer
+                   example: 100
+    delete:
+      summary: Delete a forecast weather record which has the specified id.
+      description: パスパラメータで指定されたIDを持つレコードを削除します.
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "削除対象レコードのID"
+        required: true
+      responses:
+        '200':    # status code
+          description: return no response body
+
