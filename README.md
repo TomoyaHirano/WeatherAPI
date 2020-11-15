@@ -10,12 +10,12 @@
 **[Links](#links)**<br>
 
 ## What is WeatherAPI
-天気予報情報が取得できるAPI　と　天気の実測値をユーザが登録するためのAPIです。<br/>
-詳細なAPI仕様は以下を参照してください。<br/>
+- 天気予報情報が取得できるAPI　と　天気の実測値をユーザが登録するためのAPIです。<br/>
+API仕様は以下を参照してください。<br/>
 https://tomoyahirano.github.io/WeatherAPI/dist/index.html#/
 <br/>
-サンプルデータセットとして、気象庁の以下のオープンデータを利用しています。<br/>
-https://www.data.go.jp/data/dataset/mlit_20140919_0726<br/>
+- 以下のように、天気予報情報と天気実測値情報を取り扱うAPIです（※天気実測値情報は現在実装中）。<br/>
+![er-image](https://user-images.githubusercontent.com/71970550/99187648-41115080-279b-11eb-89e0-accb601b97c4.png)
 
 ## HOW TO INSTALL
 * 利用するデータベースをセットアップする
@@ -36,4 +36,5 @@ https://www.data.go.jp/data/dataset/mlit_20140919_0726<br/>
 * ブラウザを開き「http://localhost:3000/index.html」へアクセス。<br/>※ホスト名はご自身の環境に合わせて修正してください。
 
 ## Links
-- https://www.data.go.jp/data/dataset/mlit_20140919_0726
+- サンプルデータセットとして、気象庁の以下のオープンデータを利用しています。https://www.data.go.jp/data/dataset/mlit_20140919_0726
+
